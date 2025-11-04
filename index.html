@@ -286,9 +286,9 @@
                     setNoText(noTexts[newCount]);
                     setAboveText(aboveTexts[newCount] || aboveTexts[aboveTexts.length - 1]);
 
-                    // Move button randomly with easing
-                    const randomTop = Math.random() * 70 + 15;
-                    const randomLeft = Math.random() * 70 + 15;
+                    // Move button randomly far away (wider range: 10-90%)
+                    const randomTop = Math.random() * 80 + 10;
+                    const randomLeft = Math.random() * 80 + 10;
                     setButtonPosition({ top: `${randomTop}%`, left: `${randomLeft}%` });
                 } else {
                     setNoButtonVisible(false);
@@ -357,6 +357,7 @@
                             <button
                                 className="no-btn"
                                 onMouseEnter={handleNoHover}
+                                onClick={handleNoHover}
                                 style={{
                                     top: buttonPosition.top,
                                     left: buttonPosition.left
